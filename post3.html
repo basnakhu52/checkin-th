@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>เพจเช็คอินไม่ได้ เพจเช็คอินไม่ขึ้น รับทำเช็คอินเพจ ปักหมุดร้าน</title>
+  <meta name="description" content="บริการแก้ไขปัญหาเพจเช็คอินไม่ได้ เช็คอินไม่ขึ้น แก้ไขพิกัดร้าน ปักหมุดร้านลงแผนที่ Google | รับจ้างจัดการข้อมูลร้านออนไลน์ เชื่อมโยง LINE, Facebook, Google My Business ครบจบในที่เดียว">
+  <meta name="keywords" content="เช็คอินไม่ได้, เพจเช็คอินไม่ขึ้น, ปักหมุดร้าน, รับทำเช็คอินเพจ, เพจไม่มีตำแหน่ง, google maps ร้านค้า, รับแก้เพจเช็คอิน, google my business, เช็คอินร้านใน LINE, ปักพิกัดร้านค้า">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXecCl6dFAh7ZqJVc8X_bap7keO93mbfzfaA9voeqXaUuYooSx4V9mG-M-NQypqNApTPEpIiKmg5hyTDNr_SyuqXPvgXv-n8jrGOMm5mDQcJjDiaGR1WiXDDhedz3j1y5-w4_YNanTgVM/s200/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0984e3;
+      --secondary-color: #00b894;
+      --accent-color: #7c3aed;
+      --text-color: #222;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e0e7ef;
+      --success-color: #00b894;
+      --error-color: #ff5252;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Sarabun', Arial, sans-serif;
+      margin: 0;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Header Styles */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo img {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(120deg, var(--secondary-color) 60%, var(--primary-color) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 100vw;
+      height: 100%;
+      background: url('https://cdn.pixabay.com/photo/2017/01/20/00/30/map-1994468_1280.png') center/cover no-repeat;
+      opacity: 0.08;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+    
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hero p {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      background: #fff;
+      color: var(--secondary-color);
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 2s ease;
+      display: inline-block;
+    }
+    
+    .cta-button:hover {
+      background: var(--secondary-color);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,184,148,0.2);
+    }
+    
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: 2.5rem 0;
+      background: var(--card-bg);
+      position: relative;
+    }
+    
+    .section:not(:first-of-type)::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90vw;
+      max-width: 1100px;
+      height: 0;
+      border-top: 2px solid var(--border-color);
+      z-index: 2;
+    }
+    
+    .section-title {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--secondary-color);
+      border-radius: 3px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.15rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .section-description {
+      color: #444;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    /* Testimonials Section */
+    .testimonials-section {
+      background: linear-gradient(135deg, #f5f7fa 0%, #f8fafc 100%);
+    }
+    
+    .testimonials-scroll-container {
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-color) #f1f1f1;
+    }
+    
+    .testimonials-scroll-container::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .testimonials-scroll-container::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    
+    .testimonials-scroll-container::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: 10px;
+    }
+    
+    .testimonials-horizontal {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 0.5rem;
+      width: max-content;
+      margin: 0 auto;
+    }
+    
+    .testimonial-compact {
+      min-width: 280px;
+      max-width: 320px;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(124,58,237,0.1);
+    }
+    
+    .testimonial-compact:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(124,58,237,0.12);
+    }
+    
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1rem;
+      border: 2px solid var(--accent-color);
+      box-shadow: 0 2px 8px rgba(124,58,237,0.15);
+    }
+    
+    .testimonial-user {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .testimonial-name {
+      font-weight: 600;
+      color: #333;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    
+    .testimonial-role {
+      font-size: 0.85rem;
+      color: #666;
+      background: rgba(124,58,237,0.05);
+      padding: 0.2rem 0.8rem;
+      border-radius: 12px;
+      display: inline-block;
+      width: fit-content;
+    }
+    
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+      font-style: italic;
+      position: relative;
+      padding-left: 1rem;
+    }
+    
+    .testimonial-text::before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -0.5rem;
+      font-size: 2rem;
+      color: rgba(124,58,237,0.2);
+      font-family: serif;
+    }
+    
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,184,148,0.15);
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--secondary-color);
+    }
+    
+    .service-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+    
+    .service-card h3 {
+      margin: 0.5rem 0 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    
+    .service-card p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
+    
+    /* Steps Section */
+    .steps-section {
+      background: linear-gradient(135deg, #f5f7fa 0%, #f8fafc 100%);
+    }
+    
+    .steps-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .steps-line {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--border-color);
+      z-index: 1;
+    }
+    
+    .steps-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 2;
+      padding: 1rem 0;
+    }
+    
+    .step-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 180px;
+      padding: 2rem 1rem 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(9,132,227,0.15);
+    }
+    
+    .step-card img {
+      margin-bottom: 1rem;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 0.8rem;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .step-num {
+      background: var(--secondary-color);
+      color: #fff;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      box-shadow: 0 4px 8px rgba(0,184,148,0.2);
+    }
+    
+    .step-card-content {
+      text-align: center;
+    }
+    
+    .step-card-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    
+    .step-card-desc {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
+    /* Portfolio Section */
+    .portfolio-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .portfolio-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,184,148,0.15);
+    }
+    
+    .portfolio-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-card:hover .portfolio-overlay {
+      transform: translateY(0);
+    }
+    
+    .portfolio-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .portfolio-desc {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* FAQ Section */
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.2rem 0;
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    
+    .faq-question:hover {
+      color: var(--primary-color);
+    }
+    
+    .faq-question span {
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-answer {
+      display: none;
+      color: #555;
+      margin-top: 1rem;
+      font-size: 1rem;
+      padding-right: 1.5rem;
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .faq-item.active .faq-question {
+      color: var(--secondary-color);
+    }
+    
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+      color: var(--secondary-color);
+    }
+    
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      margin-top: 2rem;
+    }
+    
+    footer h3 {
+      margin-top: 0;
+      color: var(--secondary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    footer p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    footer a {
+      color: #00e676;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    footer a:hover {
+      color: #00b894;
+      text-decoration: underline;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .social-links a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+    
+    .social-links a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 1.5rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero p {
+        font-size: 1.05rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+      
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      nav a {
+        font-size: 0.95rem;
+      }
+      
+      .hero {
+        padding: 3rem 1rem 2rem;
+      }
+      
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      
+      .section {
+        padding: 2rem 0;
+      }
+      
+      .section-title {
+        font-size: 1.4rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .steps-line {
+        display: none;
+      }
+      
+      .steps-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .step-card {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .portfolio-gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .testimonial-compact {
+        min-width: 260px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.3rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .button-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1rem;
+      }
+      
+      .section-description {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+    <a href="/" class="logo" style="text-decoration: none; color: var(--primary-color);">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="logo">
+        FixCheckin
+    </a>
+      <nav>
+        <ul>
+          <li><a href="/">หน้าแรก</a></li>
+          <li><a href="#services">บริการ</a></li>
+          <li><a href="#steps">ขั้นตอน</a></li>
+          <li><a href="#portfolio">ผลงาน</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">จัดการข้อมูล Facebook/Google</h2>
+        <p class="section-subtitle fade-in">บริการรับแก้ไขเพจเช็คอิน ปักหมุดร้าน เชื่อมโยงข้อมูลธุรกิจครบวงจร</p>
+        <p class="fade-in">ความสำคัญของข้อมูลที่ถูกต้อง
+ข้อมูลร้านค้าที่อัปเดตช่วยเพิ่มความน่าเชื่อถือและอำนวยความสะดวกให้ลูกค้า
+
+ประโยชน์
+
+ปรากฏในผลการค้นหาที่เกี่ยวข้อง
+ลดความสับสน เช่น เบอร์โทรหรือเวลาทำการผิด
+ภาพ: โปรไฟล์ธุรกิจที่อัปเดต
+วิธีอัปเดตข้อมูล
+จัดการข้อมูลทั้งบน Facebook และ Google My Business
+
+ขั้นตอนที่ 1: อัปเดต Facebook
+
+ไปที่การตั้งค่าเพจ > ข้อมูลเพจ > แก้ไขชื่อ, ที่อยู่, และเบอร์โทร
+
+ขั้นตอนที่ 2: อัปเดต Google My Business
+
+เข้าแดชบอร์ด Google My Business และแก้ไขข้อมูลร้าน
+
+ขั้นตอนที่ 3: เพิ่มรูปภาพ
+
+อัปโหลดรูปภาพร้านค้าล่าสุดเพื่อดึงดูดลูกค้า
+</p>
+</br>
+<a>การรักษาความสม่ำเสมอ
+ตรวจสอบข้อมูลทุก 3-6 เดือนเพื่อให้แน่ใจว่าทุกอย่างถูกต้องและสอดคล้องกัน
+</a>>
+      
+      
+      
+      
+      </div>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">คำถามที่พบบ่อย</h2>
+        <p class="section-description fade-in">ตอบทุกข้อสงสัยเกี่ยวกับบริการของเรา</p>
+      </div>
+      
+      <div class="faq">
+        <div class="faq-item fade-in">
+          <div class="faq-question">1. รับแก้ไขเพจเช็คอินไม่ได้ ครอบคลุมอะไรบ้าง? <span>+</span></div>
+          <div class="faq-answer">บริการของเราครอบคลุมการแก้ไขเพจเช็คอินไม่ได้ ปักหมุดร้านใหม่ แก้พิกัดผิดตำแหน่ง และเชื่อมโยงข้อมูลกับ LINE, Facebook, Google My Business</div>
+        </div>
+        
+        <div class="faq-item fade-in">
+          <div class="faq-question">2. ใช้เวลานานแค่ไหน? <span>+</span></div>
+          <div class="faq-answer">โดยปกติใช้เวลา 3-5 วันทำการหลังจากได้รับข้อมูลครบถ้วน</div>
+        </div>
+        
+        <div class="faq-item fade-in">
+          <div class="faq-question">3. ต้องเตรียมอะไรบ้าง? <span>+</span></div>
+          <div class="faq-answer">เตรียมลิงก์เพจหรือชื่อร้าน, ภาพหน้าร้าน/สถานที่ และข้อมูลติดต่อ</div>
+        </div>
+        
+        <div class="faq-item fade-in">
+          <div class="faq-question">4. มีบริการหลังการขายหรือไม่? <span>+</span></div>
+          <div class="faq-answer">มีบริการให้คำปรึกษาและดูแลหลังการแก้ไขเบื้องต้น</div>
+        </div>
+        
+        <div class="faq-item fade-in">
+          <div class="faq-question">5. รับประกันผลงานหรือไม่? <span>+</span></div>
+          <div class="faq-answer">เรารับประกันผลงาน หากพบปัญหาภายใน 7 วันทำการ เราจะแก้ไขให้ฟรี</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <h3>ติดต่อเรา</h3>
+      <p>LINE: <a href="https://lin.ee/o71hP0n" target="_blank">@pboll</a></p>
+      <p>Facebook: <a href="https://lin.ee/o71hP0n" target="_blank">FixCheckinTH</a></p>
+      <p>โทร: ติดต่อโทรผ่านไลน์ @ ได้เลย</p>
+      
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-line"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      
+      <p class="copyright">© 2025 FixCheckin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize animations on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      const windowHeight = window.innerHeight;
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementPosition < windowHeight - elementVisible) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    
+    // Run on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Update URL without refreshing
+          if (history.pushState) {
+            history.pushState(null, null, targetId);
+          } else {
+            location.hash = targetId;
+          }
+        }
+      });
+    });
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Close all items first
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('active');
+        });
+        
+        // Open clicked item if it was closed
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+    
+    // Portfolio images
+    const portfolioImages = [
+      {
+        url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMd4Z_ZlYanKoABy7O3Kn4HVWP4comrViqYQKsPQ6HSsHNpDMobeX8mPI2qMfn7WhH5L-nZQ8dGHoNvV0OxqxnFlGY8dber-UB_XHwC3yiFsvus6cCDEpfrl4zHUZRDL-maYr_QQVFrQ0aI3QhAbUzCrIGwBgR8hLFQFM376dfjMTFG8OQB0nd8s_9k8M/w400-h360/1.jpg",
+        title: "ร้านอาหาร",
+        desc: "แก้ไขปัญหาการเช็คอินบน Facebook"
+      },
+      {
+        url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8202GGqE5M6RHDH_r0yopWPPJfFX0PHCYoJRgs5sOmmilPlne_J1CKV5n5oXXCxngD8hk0gf5YMSRuqyGuG94JOd_72_2j1Rt9vL1VvXlLBmzIT7T7iSv5BsNBOB5KEq1cUWb72UjuS_2ZnMajW6O0s9LKP5qWVvctbg5PPVPtgmqwT969P40bVeSlL4/w400-h360/2.jpg",
+        title: "ร้านกาแฟ",
+        desc: "เพิ่มร้านบน Google Maps"
+      },
+      {
+        url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhW-TmPF2QiQCtHbIqwVpXr0pDK_max5TFtchRuLNsIzNlUdR5E6oNV83cNLHJJwL5oRxsKhaXi_i4MjLsn7c4v7ZW32GNS4hxjpE9RHGgORU6dnE2pjasR_WwVI0FH6ec752QcT9ZnNVb7HE_P_XIjPxnDlHVm5zE2qcbcRIzXykIUpNUo4wg90Nh0SqE/w400-h360/3.jpg",
+        title: "หอพัก",
+        desc: "แก้ไขพิกัดที่ตั้งผิดตำแหน่ง"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=600&q=80",
+        title: "ร้านเสริมสวย",
+        desc: "เชื่อมโยงกับ LINE MAP"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80",
+        title: "ร้านขายของชำ",
+        desc: "อัปเดตข้อมูลบน Google My Business"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
+        title: "ร้านขายยา",
+        desc: "แก้ไขปัญหาการเช็คอินไม่ได้"
+      }
+    ];
+    
+    // Render portfolio images
+    function renderPortfolio() {
+      const gallery = document.getElementById('portfolio-gallery');
+      
+      portfolioImages.forEach((image, index) => {
+        const card = document.createElement('div');
+        card.className = 'portfolio-card fade-in';
+        card.style.animationDelay = `${index * 0.1}s`;
+        
+        card.innerHTML = `
+          <img src="${image.url}" alt="${image.title}">
+          <div class="portfolio-overlay">
+            <h4 class="portfolio-title">${image.title}</h4>
+            <p class="portfolio-desc">${image.desc}</p>
+          </div>
+        `;
+        
+        gallery.appendChild(card);
+      });
+    }
+    
+    // Initialize portfolio on load
+    window.addEventListener('load', renderPortfolio);
+  </script>
+</body>
+</html>
