@@ -831,6 +831,401 @@
     </div>
   </header>
 
+
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1 class="fade-in">เพจเช็คอินไม่ได้? ร้านไม่ขึ้นแผนที่?</h1>
+      <p class="fade-in"> บริการแก้ไขปัญหาเพจเช็คอินไม่ได้ เช็คอินไม่ขึ้น แก้ไขพิกัดร้าน ปักหมุดร้านลงแผนที่ Google เราช่วยคุณแก้ไขปัญหาการปักหมุดเพจ ร้านค้า หอพัก ร้านอาหาร หรือธุรกิจทุกประเภท บน Facebook และ Google ได้ในไม่กี่วัน</p>
+      <div class="button-group">
+        <a href="https://lin.ee/o71hP0n" class="cta-button fade-in" target="_blank">สอบถามฟรี !</a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">รีวิวจากลูกค้าจริง</h2>
+        <p class="section-description fade-in">ความประทับใจจากธุรกิจที่เราได้ช่วยแก้ไขปัญหา</p>
+      </div>
+      
+      <div class="testimonials-scroll-container">
+        <div class="testimonials-horizontal">
+          <div class="testimonial-compact fade-in">
+            <div class="testimonial-header">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="ลูกค้า1" class="testimonial-avatar">
+              <div class="testimonial-user">
+                <div class="testimonial-name">คุณติ้ล</div>
+                <div class="testimonial-role">เจ้าของร้านอาหาร</div>
+              </div>
+            </div>
+            <div class="testimonial-text">บริการดีมาก ทีมงานตอบไวและแก้ปัญหาเพจเช็คอินไม่ได้ให้เรียบร้อยใน 3 วัน!</div>
+          </div>
+
+          <div class="testimonial-compact fade-in">
+            <div class="testimonial-header">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="ลูกค้า2" class="testimonial-avatar">
+              <div class="testimonial-user">
+                <div class="testimonial-name">คุณอร</div>
+                <div class="testimonial-role">ร้านเสื้อผ้า</div>
+              </div>
+            </div>
+            <div class="testimonial-text">ร้านขึ้น Google Maps แล้ว ลูกค้าหาเจอง่ายขึ้นเยอะ ขอบคุณมากค่ะ</div>
+          </div>
+
+          <div class="testimonial-compact fade-in">
+            <div class="testimonial-header">
+              <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="ลูกค้า3" class="testimonial-avatar">
+              <div class="testimonial-user">
+                <div class="testimonial-name">คุณธีระ</div>
+                <div class="testimonial-role">ธุรกิจหอพัก</div>
+              </div>
+            </div>
+            <div class="testimonial-text">ประทับใจในความใส่ใจรายละเอียดและบริการหลังการขาย แนะนำเลยครับ!</div>
+          </div>
+
+          <div class="testimonial-compact fade-in">
+            <div class="testimonial-header">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="ลูกค้า4" class="testimonial-avatar">
+              <div class="testimonial-user">
+                <div class="testimonial-name">คุณนิด</div>
+                <div class="testimonial-role">ร้านกาแฟ</div>
+              </div>
+            </div>
+            <div class="testimonial-text">ทีมงานมืออาชีพ ให้คำแนะนำดีมาก เพจร้านเช็คอินได้แล้ว ดีใจมากค่ะ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+    /* เพิ่มสไตล์สำหรับส่วนราคา */
+    .pricing-section {
+      background: linear-gradient(135deg, #f5f7fa 0%, #f8fafc 100%);
+    }
+    
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .pricing-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(9,132,227,0.15);
+    }
+    
+    .pricing-card.popular {
+      border: 2px solid var(--accent-color);
+      box-shadow: 0 4px 16px rgba(124,58,237,0.1);
+    }
+    
+    .pricing-card.popular::before {
+      content: 'แนะนำ';
+      position: absolute;
+      top: 10px;
+      right: -30px;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.2rem 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transform: rotate(45deg);
+    }
+    
+    .pricing-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .pricing-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .pricing-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #666;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    
+    .pricing-features li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .pricing-features li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+    }
+    
+    .pricing-features li.disabled {
+      color: #999;
+    }
+    
+    .pricing-features li.disabled::before {
+      content: '\f00d';
+      color: #ccc;
+    }
+    
+    .pricing-button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid var(--secondary-color);
+    }
+    
+    .pricing-button:hover {
+      background: transparent;
+      color: var(--secondary-color);
+    }
+    
+    .pricing-button.outline {
+      background: transparent;
+      color: var(--secondary-color);
+      border: 2px solid var(--secondary-color);
+    }
+    
+    .pricing-button.outline:hover {
+      background: var(--secondary-color);
+      color: white;
+    }
+    
+    .pricing-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+  <!-- ส่วน header และ hero เดิม -->
+
+  <!-- ส่วน testimonials เดิม -->
+
+  <!-- ส่วน services เดิม -->
+
+  <!-- เพิ่มส่วนราคาใหม่ที่นี่ -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">ราคาบริการ</h2>
+        <p class="section-description fade-in">ราคาค่าบริการแก้ไขปัญหาเช็คอินและปักหมุดร้าน เพจ และ Google Map</p>
+      </div>
+      
+      <div class="pricing-cards">
+        <div class="pricing-card fade-in">
+          <h3 class="pricing-title">ปักหมุด Google Maps</h3>
+          <div class="pricing-price">800<span> บาท</span></div>
+          <ul class="pricing-features">
+            <li>เพิ่มร้านบน Google Maps</li>
+            <li>แก้ไขตำแหน่งที่ตั้งผิดพลาด</li>
+            <li>อัปเดตข้อมูลร้านค้า</li>
+            <li>รับประกันผลงาน *ตลอดไป</li>
+            <li class="disabled">ไม่รวม Facebook</li>
+          </ul>
+          <a href="https://lin.ee/o71hP0n" class="pricing-button outline" target="_blank">สอบถามรายละเอียด</a>
+        </div>
+        
+        <div class="pricing-card fade-in popular">
+          <h3 class="pricing-title">ปักหมุดเพจ Facebook</h3>
+          <div class="pricing-price">700<span> บาท</span></div>
+          <ul class="pricing-features">
+            <li>แก้ไขปัญหาเพจเช็คอินไม่ได้</li>
+            <li>ปักหมุดตำแหน่งร้านบน Facebook</li>
+            <li>ตรวจสอบและยืนยันตำแหน่ง</li>
+            <li>รับประกันผลงาน *ตลอดไป</li>
+            <li class="disabled">ไม่รวม Google Maps</li>
+          </ul>
+          <a href="https://lin.ee/o71hP0n" class="pricing-button" target="_blank">สอบถามรายละเอียด</a>
+        </div>
+
+        
+        <div class="pricing-card fade-in">
+          <h3 class="pricing-title">แพ็กเกจรวม</h3>
+          <div class="pricing-price">1,200<span> บาท</span></div>
+          <ul class="pricing-features">
+            <li>ปักหมุดเพจ Facebook</li>
+            <li>ปักหมุด Google Maps</li>
+            <li>เชื่อมโยง LINE MAP</li>
+            <li>อัปเดตข้อมูลทั้งหมด</li>
+            <li>รับประกันผลงาน *ตลอดไป</li>
+          </ul>
+          <a href="https://lin.ee/o71hP0n" class="pricing-button outline" target="_blank">สอบถามรายละเอียด</a>
+        </div>
+      </div>
+      
+      <p class="pricing-note fade-in">*ราคาอาจเปลี่ยนแปลงตามความซับซ้อนของงาน กรุณาสอบถามรายละเอียดเพิ่มเติม</p>
+    </div>
+  </section>
+
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">บริการของเรา</h2>
+        <p class="section-subtitle fade-in">บริการรับแก้ไขเพจเช็คอิน ปักหมุดร้าน เชื่อมโยงข้อมูลธุรกิจครบวงจร</p>
+        <p class="section-description fade-in">เราช่วยให้ธุรกิจของคุณปรากฏบนแผนที่ ค้นหาเจอง่าย เพิ่มโอกาสในการเข้าถึงลูกค้า ทั้งบน Facebook, Google, LINE และแพลตฟอร์มออนไลน์อื่น ๆ</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3><a href="post.html" style="color: inherit; text-decoration: none;">แก้ไขเพจเช็คอินไม่ได้</a></h3>
+          <p>แก้ไขปัญหาเพจเช็คอินไม่ขึ้น หรือไม่มีตำแหน่ง</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="icon"><i class="fas fa-map-pin"></i></div>
+          <h3><a href="post1.html" style="color: inherit; text-decoration: none;">ปักหมุดร้านบน Google Maps</a></h3>
+          <p>เพิ่มร้านค้าหรือธุรกิจของคุณลงแผนที่ Google</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="icon"><i class="fas fa-location-arrow"></i></div>
+                  <h3><a href="post2.html" style="color: inherit; text-decoration: none;">แก้พิกัดเพจผิดตำแหน่ง</a></h3>
+          <p>ย้ายตำแหน่งร้าน/เพจให้ถูกต้อง</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="icon"><i class="fas fa-sync-alt"></i></div>
+          <h3><a href="post3.html" style="color: inherit; text-decoration: none;">จัดการข้อมูล Facebook/Google</a></h3>
+          <p>อัปเดตข้อมูลร้านใน Facebook, Google My Business</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="icon"><i class="fab fa-line"></i></div>
+          <h3><a href="post4.html" style="color: inherit; text-decoration: none;">เชื่อมโยงกับ LINE MAP</a></h3>
+          <p>เชื่อมร้านกับ LINE MAP และค้นหาใกล้ฉัน</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="icon"><i class="fas fa-headset"></i></div>
+          <h3>ที่ปรึกษาออนไลน์</h3>
+          <p>ให้คำปรึกษาและแก้ไขปัญหาออนไลน์ตลอดกระบวนการ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section steps-section" id="steps">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">ขั้นตอนการทำงาน</h2>
+        <p class="section-description fade-in">เพียง 5 ขั้นตอนง่ายๆ เพื่อให้ธุรกิจของคุณปรากฏบนแผนที่</p>
+      </div>
+      
+      <div class="steps-container">
+        <div class="steps-line"></div>
+        <div class="steps-cards">
+          <div class="step-card fade-in">
+            <div class="step-num">1</div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059518.png" alt="สอบถาม">
+            <div class="step-card-content">
+              <div class="step-card-title">สอบถาม/แจ้งความต้องการ</div>
+              <div class="step-card-desc">ส่งลิงก์เพจหรือชื่อร้านของคุณ พร้อมแจ้งปัญหาหรือสิ่งที่ต้องการแก้ไข</div>
+            </div>
+          </div>
+          
+          <div class="step-card fade-in">
+            <div class="step-num">2</div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059528.png" alt="ส่งข้อมูล">
+            <div class="step-card-content">
+              <div class="step-card-title">ส่งภาพหน้าร้าน/สถานที่</div>
+              <div class="step-card-desc">เพื่อยืนยันตำแหน่งและความถูกต้องของร้าน/เพจ</div>
+            </div>
+          </div>
+          
+          <div class="step-card fade-in">
+            <div class="step-num">3</div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059544.png" alt="ดำเนินงาน">
+            <div class="step-card-content">
+              <div class="step-card-title">ทีมงานตรวจสอบและดำเนินงาน</div>
+              <div class="step-card-desc">ตรวจสอบข้อมูล ประเมิน และเริ่มดำเนินการแก้ไข</div>
+            </div>
+          </div>
+          
+          <div class="step-card fade-in">
+            <div class="step-num">4</div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059561.png" alt="แจ้งผล">
+            <div class="step-card-content">
+              <div class="step-card-title">แจ้งผลและส่งมอบงาน</div>
+              <div class="step-card-desc">แจ้งผลการดำเนินงาน พร้อมส่งมอบงานให้ลูกค้า</div>
+            </div>
+          </div>
+          
+          <div class="step-card fade-in">
+            <div class="step-num">5</div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059506.png" alt="ชำระเงิน">
+            <div class="step-card-content">
+              <div class="step-card-title">ยืนยันและชำระเงิน</div>
+              <div class="step-card-desc">ลูกค้ายืนยันความเรียบร้อยและชำระเงิน (โอน/พร้อมเพย์)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">ผลงานของเรา</h2>
+        <p class="section-description fade-in">ตัวอย่างธุรกิจที่เราได้ช่วยแก้ไขปัญหา มากกว่า 400 ร้านค้า ในช่วง 3 ปีที่ผ่านมา</p>
+      </div>
+      
+      <div class="portfolio-gallery" id="portfolio-gallery">
+        <!-- รูปภาพจะถูกเพิ่มโดย JS -->
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
   <section class="section" id="services">
     <div class="container">
       <div class="section-header">
