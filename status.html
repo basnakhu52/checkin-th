@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ติดต่อเรา - FixCheckin</title>
+  <meta name="description" content="ติดต่อเราเพื่อแก้ไขปัญหาเพจเช็คอินไม่ได้ เพจเช็คอินไม่ขึ้น ปักหมุดร้านบนแผนที่ Google และ Facebook">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YC2EBZ1N1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3YC2EBZ1N1');
+</script>
+<link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXecCl6dFAh7ZqJVc8X_bap7keO93mbfzfaA9voeqXaUuYooSx4V9mG-M-NQypqNApTPEpIiKmg5hyTDNr_SyuqXPvgXv-n8jrGOMm5mDQcJjDiaGR1WiXDDhedz3j1y5-w4_YNanTgVM/s200/logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0984e3;
+      --secondary-color: #00b894;
+      --accent-color: #7c3aed;
+      --text-color: #222;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e0e7ef;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Sarabun', Arial, sans-serif;
+      margin: 0;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Header Styles */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo img {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 4rem 0;
+      background: var(--card-bg);
+    }
+    
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .contact-title {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .contact-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--secondary-color);
+      border-radius: 3px;
+    }
+    
+    .contact-subtitle {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 2rem;
+      width: 100%;
+      max-width: 350px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(9,132,227,0.15);
+    }
+    
+    .contact-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+    
+    .contact-card-desc {
+      color: #555;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .qr-code {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 1.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.5rem;
+    }
+    
+    .qr-code img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    .line-button {
+      display: inline-block;
+      background: #06C755;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .line-button:hover {
+      background: #05a54a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(6,199,85,0.2);
+    }
+    
+    .line-id {
+      background: rgba(6,199,85,0.1);
+      color: #06C755;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-block;
+      margin: 1rem 0;
+    }
+    
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    
+    footer h3 {
+      margin-top: 0;
+      color: var(--secondary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    footer p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    footer a {
+      color: #00e676;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    footer a:hover {
+      color: #00b894;
+      text-decoration: underline;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .social-links a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+    
+    .social-links a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 1.5rem;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+      
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .contact-title {
+        font-size: 1.5rem;
+      }
+      
+      .contact-subtitle {
+        font-size: 1rem;
+      }
+      
+      .contact-methods {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .contact-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+    <a href="/" class="logo" style="text-decoration: none; color: var(--primary-color);">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="logo">
+        FixCheckin
+    </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="index.html#services">บริการ</a></li>
+          <li><a href="index.html#pricing">ราคา</a></li>
+          <li><a href="index.html#portfolio">ผลงาน</a></li>
+          <li><a href="call.html">ติดต่อ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <section class="status-section">
+    <div class="container">
+      <div class="status-header">
+        <h1 class="status-title">ติดตามสถานะงาน</h1>
+        <p class="status-subtitle">ตรวจสอบความคืบหน้างานของคุณที่นี่</p>
+      </div>
+      
+      <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาชื่อเพจหรือลูกค้า...">
+        <button class="search-button" id="searchButton">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      
+      <div class="status-cards" id="statusCards">
+        <div class="loading">
+          <i class="fas fa-spinner fa-spin"></i> กำลังโหลดข้อมูล...
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script>
+    // Google Sheets API URL
+    const SHEET_ID = '1OgNMaebAKNDKxBwIdOwiRZX73dSdqBztDfNzarj4uGM';
+    const SHEET_NAME = 'status';
+    const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
+    
+    // DOM Elements
+    const statusCards = document.getElementById('statusCards');
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    
+    // Fetch data from Google Sheets
+    async function fetchStatusData() {
+      try {
+        const response = await fetch(API_URL);
+        const text = await response.text();
+        const json = JSON.parse(text.substr(47).slice(0, -2));
+        
+        const rows = json.table.rows;
+        const headers = ['page', 'status', 'note', 'pay']; // กำหนดหัวคอลัมน์เอง
+        
+        const data = [];
+        
+        // เริ่มจากแถวที่ 1 เพราะแถว 0 คือหัวตาราง
+        for (let i = 1; i < rows.length; i++) {
+          const row = rows[i].c;
+          // ตรวจสอบว่ามีข้อมูลในแถวนี้หรือไม่
+          if (row && row[0] && row[0].v) {
+            const item = {
+              page: row[0].v || '',
+              status: row[1]?.v || '',
+              note: row[2]?.v || '',
+              pay: row[3]?.v || ''
+            };
+            data.push(item);
+          }
+        }
+        
+        return data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        return [];
+      }
+    }
+    
+    // Render status cards
+    function renderStatusCards(data, searchTerm = '') {
+      if (!data || data.length === 0) {
+        statusCards.innerHTML = '<div class="no-results">ไม่พบข้อมูลสถานะงาน</div>';
+        return;
+      }
+      
+      let filteredData = data;
+      if (searchTerm) {
+        const term = searchTerm.toLowerCase();
+        filteredData = data.filter(item => 
+          item.page && item.page.toLowerCase().includes(term)
+        );
+      }
+      
+      if (filteredData.length === 0) {
+        statusCards.innerHTML = '<div class="no-results">ไม่พบผลลัพธ์ที่ตรงกับการค้นหา</div>';
+        return;
+      }
+      
+      statusCards.innerHTML = filteredData.map(item => `
+        <div class="status-card">
+          <div class="customer-name">${item.page || 'ไม่ระบุชื่อ'}</div>
+          <div class="status-badge ${getStatusClass(item.status)}">
+            ${item.status || 'ไม่ระบุสถานะ'}
+          </div>
+          ${item.note ? `
+            <div class="note-container">
+              <p class="note-text">"${item.note}"</p>
+            </div>
+          ` : ''}
+          <div class="payment-status">
+            <i class="fas ${item.pay === 'จ่ายตังแล้ว' ? 'fa-check-circle payment-paid' : 'fa-clock payment-pending'}"></i>
+            ${item.pay || 'ไม่ระบุสถานะการชำระเงิน'}
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    // Get CSS class for status
+    function getStatusClass(status) {
+      if (!status) return '';
+      
+      if (status.includes('กำลังเช็ค')) return 'status-checking';
+      if (status.includes('กำลังแก้ไข')) return 'status-fixing';
+      if (status.includes('รออัปเดต')) return 'status-waiting';
+      if (status.includes('เสร็จ')) return 'status-completed';
+      return '';
+    }
+    
+    // Initialize the page
+    async function init() {
+      const data = await fetchStatusData();
+      console.log('Data loaded:', data); // สำหรับตรวจสอบข้อมูลที่ได้
+      renderStatusCards(data);
+      
+      // Search functionality
+      searchButton.addEventListener('click', () => {
+        renderStatusCards(data, searchInput.value);
+      });
+      
+      searchInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+          renderStatusCards(data, searchInput.value);
+        }
+      });
+    }
+    
+    // Start the application
+    init();
+  </script>
+
+
+
+
+  <footer id="contact">
+    <div class="container">
+      <h3>ติดต่อเรา</h3>
+      <p>LINE: <a href="call.html">@pboll</a></p>
+      <p>Facebook: <a href="https://lin.ee/o71hP0n" target="_blank">FixCheckinTH</a></p>
+      <p>โทร: ติดต่อโทรผ่านไลน์ @ ได้เลย</p>
+      
+      <div class="social-links">
+        <a href="call.html" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="call.html" target="_blank"><i class="fab fa-line"></i></a>
+        <a href="call.html" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      
+      <p class="copyright">© 2025 FixCheckin. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+    <style>
+    :root {
+      --primary-color: #0984e3;
+      --secondary-color: #00b894;
+      --accent-color: #7c3aed;
+      --text-color: #222;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e0e7ef;
+      --status-checking: #FFC107;
+      --status-fixing: #2196F3;
+      --status-waiting: #9C27B0;
+      --status-completed: #4CAF50;
+      --status-pending: #FF5722;
+      --status-paid: #607D8B;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Sarabun', Arial, sans-serif;
+      margin: 0;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Header Styles */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo img {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Status Page Styles */
+    .status-section {
+      padding: 3rem 0;
+    }
+    
+    .status-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .status-title {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .status-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-family: 'Sarabun', sans-serif;
+      padding-right: 3rem;
+    }
+    
+    .search-button {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    
+    .status-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .status-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .status-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(9,132,227,0.15);
+    }
+    
+    .customer-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    
+    .status-checking {
+      background-color: rgba(255, 193, 7, 0.2);
+      color: #b28704;
+    }
+    
+    .status-fixing {
+      background-color: rgba(33, 150, 243, 0.2);
+      color: #0d6fb4;
+    }
+    
+    .status-waiting {
+      background-color: rgba(156, 39, 176, 0.2);
+      color: #7e1b8d;
+    }
+    
+    .status-completed {
+      background-color: rgba(76, 175, 80, 0.2);
+      color: #2d6b30;
+    }
+    
+    .note-container {
+      background: rgba(0, 184, 148, 0.05);
+      border-left: 4px solid var(--secondary-color);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .note-text {
+      font-style: italic;
+      color: #555;
+    }
+    
+    .payment-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .payment-paid {
+      color: var(--status-paid);
+    }
+    
+    .payment-pending {
+      color: var(--status-pending);
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      grid-column: 1 / -1;
+    }
+    
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      margin-top: 2rem;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .status-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .status-title {
+        font-size: 1.5rem;
+      }
+      
+      .status-subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+</body>
+</html>
