@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary-color: #0984e3;
-      --secondary-color: #00b894;
-      --accent-color: #7c3aed;
+      --primary-color: #0f3fb0;
+      --secondary-color: #39b4ca;
+      --accent-color: #631cde;
       --text-color: #222;
       --light-bg: #f8fafc;
       --card-bg: #ffffff;
@@ -834,14 +834,32 @@
 
   <section class="hero" id="hero">
     <div class="container">
-      <h1 class="fade-in">เพจเช็คอินไม่ได้? ร้านไม่ขึ้นแผนที่?</h1>
-      <p class="fade-in"> บริการแก้ไขปัญหาเพจเช็คอินไม่ได้ เช็คอินไม่ขึ้น แก้ไขพิกัดร้าน ปักหมุดร้านลงแผนที่ Google เราช่วยคุณแก้ไขปัญหาการปักหมุดเพจ ร้านค้า หอพัก ร้านอาหาร หรือธุรกิจทุกประเภท บน Facebook และ Google ได้ในไม่กี่วัน</p>
+      <h1 class="">เพจเช็คอินไม่ได้? ร้านไม่ขึ้นแผนที่?</h1>
+      <p class=""> บริการแก้ไขปัญหาเพจเช็คอินไม่ได้ เช็คอินไม่ขึ้น แก้ไขพิกัดร้าน ปักหมุดร้านลงแผนที่ Google เราช่วยคุณแก้ไขปัญหาการปักหมุดเพจ ร้านค้า หอพัก ร้านอาหาร หรือธุรกิจทุกประเภท บน Facebook และ Google ได้ในไม่กี่วัน</p>
       <div class="button-group">
-        <a href="/call.html" class="cta-button fade-in" target="_blank">สอบถามฟรี !</a>
+        <a href="/call.html" class="cta-button ">สอบถามฟรี !</a>
 
       </div>
     </div>
   </section>
+
+    <script>
+    // เพิ่มสคริปต์นี้ก่อนปิด body
+    document.addEventListener('DOMContentLoaded', function() {
+      // แสดง Hero ทันที
+      document.querySelector('.hero').style.opacity = 1;
+      
+      // เมื่อหน้าเว็บโหลดเสร็จ
+      window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+      });
+      
+      // ตั้งค่าเวลา fallback ถ้า load event ไม่ทำงาน
+      setTimeout(function() {
+        document.body.classList.add('loaded');
+      }, 3000);
+    });
+  </script>
 
   <section class="section testimonials-section" id="testimonials">
     <div class="container">
@@ -1062,7 +1080,7 @@
             <li>รับประกันผลงาน *ตลอดไป</li>
             <li class="disabled">ไม่รวม Facebook</li>
           </ul>
-          <a href="https://lin.ee/o71hP0n" class="pricing-button outline" target="_blank">สอบถามรายละเอียด</a>
+          <a href="call.html" class="pricing-button outline" >สอบถามรายละเอียด</a>
         </div>
         
         <div class="pricing-card fade-in popular">
@@ -1075,7 +1093,7 @@
             <li>รับประกันผลงาน *ตลอดไป</li>
             <li class="disabled">ไม่รวม Google Maps</li>
           </ul>
-          <a href="https://lin.ee/o71hP0n" class="pricing-button" target="_blank">สอบถามรายละเอียด</a>
+          <a href="call.html" class="pricing-button" >สอบถามรายละเอียด</a>
         </div>
 
         
@@ -1089,7 +1107,7 @@
             <li>อัปเดตข้อมูลทั้งหมด</li>
             <li>รับประกันผลงาน *ตลอดไป</li>
           </ul>
-          <a href="https://lin.ee/o71hP0n" class="pricing-button outline" target="_blank">สอบถามรายละเอียด</a>
+          <a href="call.html" class="pricing-button outline" >สอบถามรายละเอียด</a>
         </div>
       </div>
       
