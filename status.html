@@ -320,7 +320,14 @@
       .contact-card {
         width: 100%;
       }
+
+
+      
     }
+
+
+
+    
   </style>
 </head>
 <body>
@@ -369,120 +376,119 @@
 
 
   <script>
-    // Google Sheets API URL
-    const SHEET_ID = '1OgNMaebAKNDKxBwIdOwiRZX73dSdqBztDfNzarj4uGM';
-    const SHEET_NAME = 'status';
-    const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
+// Google Sheets API URL
+const SHEET_ID = '1OgNMaebAKNDKxBwIdOwiRZX73dSdqBztDfNzarj4uGM';
+const SHEET_NAME = 'status';
+const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
+
+// DOM Elements
+const statusCards = document.getElementById('statusCards');
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+
+// Fetch data from Google Sheets
+async function fetchStatusData() {
+  try {
+    const response = await fetch(API_URL);
+    const text = await response.text();
+    const json = JSON.parse(text.substr(47).slice(0, -2));
     
-    // DOM Elements
-    const statusCards = document.getElementById('statusCards');
-    const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
+    const rows = json.table.rows;
+    const headers = ['page', 'status', 'note', 'pay'];
     
-    // Fetch data from Google Sheets
-    async function fetchStatusData() {
-      try {
-        const response = await fetch(API_URL);
-        const text = await response.text();
-        const json = JSON.parse(text.substr(47).slice(0, -2));
-        
-        const rows = json.table.rows;
-        const headers = ['page', 'status', 'note', 'pay']; // กำหนดหัวคอลัมน์เอง
-        
-        const data = [];
-        
-        // เริ่มจากแถวที่ 1 เพราะแถว 0 คือหัวตาราง
-        for (let i = 1; i < rows.length; i++) {
-          const row = rows[i].c;
-          // ตรวจสอบว่ามีข้อมูลในแถวนี้หรือไม่
-          if (row && row[0] && row[0].v) {
-            const item = {
-              page: row[0].v || '',
-              status: row[1]?.v || '',
-              note: row[2]?.v || '',
-              pay: row[3]?.v || ''
-            };
-            data.push(item);
-          }
-        }
-        
-        return data;
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        return [];
+    const data = [];
+    
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i].c;
+      if (row && row[0] && row[0].v) {
+        const item = {
+          page: row[0].v || '',
+          status: row[1]?.v || '',
+          note: row[2]?.v || '',
+          pay: row[3]?.v || ''
+        };
+        data.push(item);
       }
     }
     
-    // Render status cards
-    function renderStatusCards(data, searchTerm = '') {
-      if (!data || data.length === 0) {
-        statusCards.innerHTML = '<div class="no-results">ไม่พบข้อมูลสถานะงาน</div>';
-        return;
-      }
-      
-      let filteredData = data;
-      if (searchTerm) {
-        const term = searchTerm.toLowerCase();
-        filteredData = data.filter(item => 
-          item.page && item.page.toLowerCase().includes(term)
-        );
-      }
-      
-      if (filteredData.length === 0) {
-        statusCards.innerHTML = '<div class="no-results">ไม่พบผลลัพธ์ที่ตรงกับการค้นหา</div>';
-        return;
-      }
-      
-      statusCards.innerHTML = filteredData.map(item => `
-        <div class="status-card">
-          <div class="customer-name">${item.page || 'ไม่ระบุชื่อ'}</div>
-          <div class="status-badge ${getStatusClass(item.status)}">
-            ${item.status || 'ไม่ระบุสถานะ'}
-          </div>
-          ${item.note ? `
-            <div class="note-container">
-              <p class="note-text">"${item.note}"</p>
-            </div>
-          ` : ''}
-          <div class="payment-status">
-            <i class="fas ${item.pay === 'จ่ายตังแล้ว' ? 'fa-check-circle payment-paid' : 'fa-clock payment-pending'}"></i>
-            ${item.pay || 'ไม่ระบุสถานะการชำระเงิน'}
-          </div>
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
+}
+
+// Render status cards with numbering
+function renderStatusCards(data, searchTerm = '') {
+  if (!data || data.length === 0) {
+    statusCards.innerHTML = '<div class="no-results">ไม่พบข้อมูลสถานะงาน</div>';
+    return;
+  }
+  
+  let filteredData = data;
+  if (searchTerm) {
+    const term = searchTerm.toLowerCase();
+    filteredData = data.filter(item => 
+      item.page && item.page.toLowerCase().includes(term)
+    );
+  }
+  
+  if (filteredData.length === 0) {
+    statusCards.innerHTML = '<div class="no-results">ไม่พบผลลัพธ์ที่ตรงกับการค้นหา</div>';
+    return;
+  }
+  
+  statusCards.innerHTML = filteredData.map((item, index) => `
+    <div class="status-card">
+      <div class="card-number">${index + 1}</div>
+      <div class="customer-name">${item.page || 'ไม่ระบุชื่อ'}</div>
+      <div class="status-badge ${getStatusClass(item.status)}">
+        ${item.status || 'ไม่ระบุสถานะ'}
+      </div>
+      ${item.note ? `
+        <div class="note-container">
+          <p class="note-text">"${item.note}"</p>
         </div>
-      `).join('');
+      ` : ''}
+      <div class="payment-status">
+        <i class="fas ${item.pay === 'จ่ายตังแล้ว' ? 'fa-check-circle payment-paid' : 'fa-clock payment-pending'}"></i>
+        ${item.pay || 'ไม่ระบุสถานะการชำระเงิน'}
+      </div>
+    </div>
+  `).join('');
+}
+
+// Get CSS class for status
+function getStatusClass(status) {
+  if (!status) return '';
+  
+  if (status.includes('กำลังเช็ค')) return 'status-checking';
+  if (status.includes('กำลังแก้ไข')) return 'status-fixing';
+  if (status.includes('รออัปเดต')) return 'status-waiting';
+  if (status.includes('เสร็จ')) return 'status-completed';
+  return '';
+}
+
+// Initialize the page
+async function init() {
+  const data = await fetchStatusData();
+  console.log('Data loaded:', data);
+  renderStatusCards(data);
+  
+  // Search functionality
+  searchButton.addEventListener('click', () => {
+    renderStatusCards(data, searchInput.value);
+  });
+  
+  searchInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      renderStatusCards(data, searchInput.value);
     }
-    
-    // Get CSS class for status
-    function getStatusClass(status) {
-      if (!status) return '';
-      
-      if (status.includes('กำลังเช็ค')) return 'status-checking';
-      if (status.includes('กำลังแก้ไข')) return 'status-fixing';
-      if (status.includes('รออัปเดต')) return 'status-waiting';
-      if (status.includes('เสร็จ')) return 'status-completed';
-      return '';
-    }
-    
-    // Initialize the page
-    async function init() {
-      const data = await fetchStatusData();
-      console.log('Data loaded:', data); // สำหรับตรวจสอบข้อมูลที่ได้
-      renderStatusCards(data);
-      
-      // Search functionality
-      searchButton.addEventListener('click', () => {
-        renderStatusCards(data, searchInput.value);
-      });
-      
-      searchInput.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-          renderStatusCards(data, searchInput.value);
-        }
-      });
-    }
-    
-    // Start the application
-    init();
+  });
+}
+
+// Start the application
+init();
   </script>
 
 
@@ -770,6 +776,65 @@
       
       .status-subtitle {
         font-size: 1rem;
+      }
+
+      
+
+
+    }
+  </style>
+
+
+  <style>
+    /* CSS สำหรับหมายเลขลำดับ - ทำงานทั้งมือถือและ desktop */
+    .status-card {
+      position: relative; /* จำเป็นสำหรับการวางตำแหน่ง absolute */
+      padding: 1.5rem 1.5rem 1.5rem 2.5rem; /* เพิ่ม padding ซ้าย */
+      overflow: visible; /* ให้หมายเลขสามารถแสดงนอกการ์ดได้ */
+    }
+    
+    .card-number {
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 36px;
+      height: 36px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      display: flex !important; /* ใช้ !important เพื่อป้องกันการ override */
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+      z-index: 2;
+      border: 2px solid white;
+      /* เพิ่ม transition สำหรับ animation */
+      transition: all 0.3s ease;
+    }
+    
+    /* เพิ่ม hover effect */
+    .status-card:hover .card-number {
+      transform: scale(1.1);
+      background: var(--primary-color);
+    }
+    
+    /* ปรับขนาดสำหรับ desktop */
+    @media (min-width: 768px) {
+      .card-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        top: -15px;
+        left: -15px;
+      }
+    }
+    
+    /* ป้องกันไม่ให้ media query อื่น override */
+    @media (max-width: 767px) {
+      .card-number {
+        display: flex !important;
       }
     }
   </style>
